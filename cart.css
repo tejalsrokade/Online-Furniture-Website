@@ -1,0 +1,216 @@
+*{
+    margin:0;
+    font-family: arial;
+    border:border-box;
+}
+.navbar
+{
+height:60px;
+background-color: rgb(240, 175, 137);
+color:rgb(103, 46, 2);
+display:flex;
+align-items: center;
+
+
+}
+.nav-logo
+{
+height:60px;
+width:100px;
+}
+.logo{
+    background-image: url("/logo.png");
+    background-size: cover;
+    height:60px;
+    width:100%;
+
+}
+.border
+{
+border:2px solid transparent;
+}
+.border:hover
+{
+border:2px solid rgb(163, 100, 77);
+border-radius:5px;
+}
+.address
+{
+margin-top: 30px;;
+}
+/**search box**/
+.nav-search{
+   
+    display:flex;
+    justify-content: space-evenly;
+    background-color:blanchedalmond;
+    width:700px;
+    height:30px;
+    border-radius: 5px;
+}
+.search-select
+{
+border-top-left-radius:4px;
+border-bottom-left-radius:4px;
+background-color: blanchedalmond;
+color:rgb(103, 46, 2);
+padding:5px;
+border:none;
+}
+.search-input
+{
+width:550px;
+border:none;
+font-size: 1rem;
+}
+.search-icon{
+
+    width:45px;
+    display:flex;
+    justify-content: center;
+    font-size: 1 rem;
+    align-items: center;
+
+}
+.span
+{
+font-size:0.7rem;
+}
+.nav-second
+{
+font-size:0.85rem;
+font-weight:700; 
+
+}
+.account{
+    color:rgb(103, 46, 2);
+    padding-left:10%;
+}
+.nav-search:hover{
+    border: 2px solid rgb(163, 100, 77);
+}
+.nav-cart{
+    padding-left:10%;
+}
+.panel
+{
+   
+    background-color:rgba(255, 235, 205, 0.89);
+    color:rgb(103, 46, 2);
+    display:flex;
+    align-items: center;
+        
+ 
+}
+.panel{
+    height:50px;
+}
+.panel-ops a{ 
+  justify-content: space-evenly;
+  display:inline;
+  margin:100px;
+}
+.panel-ops{
+    
+   width:100%;
+}
+.hero-section{
+    background-image: url("newban.png");
+    background-size: cover;
+    height:300px;
+}
+.shop-section{
+    background-color: rgba(250, 217, 167, 0.473);
+    display:flex;
+    justify-content: space-evenly;
+    padding-bottom:50px;
+}
+.nav-second{
+    color:rgb(168, 105, 56);
+
+}
+table
+{
+height:200px;
+
+width:100%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+.tb{
+    padding-bottom:25px;
+    padding-top:25px;
+    display:flex;
+}
+button
+{
+    border: none;
+    background-color:rgb(133, 76, 33);
+    box-shadow: 5px 5px rgba(88, 37, 1, 0.742);
+    display:flex; 
+    margin: 2px 2px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color:cornsilk;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 1rem;
+}
+.item-number
+{
+background-color:rgba(168, 105, 56, 0.822) ;
+border-radius: 5px;
+color:beige;
+}
+.footinfo
+{
+height:150px;
+width:100%;
+color:blanchedalmond;
+background-color:rgba(168, 105, 56, 0.822);
+text-align: center;
+
+}
+button
+{
+    border: none;
+    background-color:rgb(133, 76, 33);
+    box-shadow: 5px 5px rgba(168, 105, 56, 0.822);
+    display:flex; 
+    margin: 4px 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color:cornsilk;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 3px;
+}
+.remove{
+    padding: 4px 4px;
+    background-color: rgb(133, 76, 33);
+    box-shadow: none;
+    color:beige;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 2px;
+}
+.pay{
+    height:50px;
+    text-align: center;
+    align-content:center;
+    margin-bottom: 10px;
+    
+}
+.backtop{
+    height:30px;
+    align-content:center;
+    text-align: center;
+    background-color: bisque;
+   
+}

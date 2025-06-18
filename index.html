@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurniSure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Toggle mobile menu
+        $(".menu-toggle").click(function () {
+            $(".panel-ops").slideToggle();
+        });
+
+        // AJAX example: Fetch new furniture items dynamically
+        $(".shop-section").on("click", ".load-more", function () {
+            $.ajax({
+                url: "newProducts.json", // Example JSON file with products
+                type: "GET",
+                success: function (data) {
+                    $.each(data, function (index, product) {
+                        $(".shop-section").append(`
+                            <div class="box">
+                                <div class="box-content">
+                                    <h2>${product.title}</h2>
+                                    <p>${product.description}</p>
+                                    <div class="box_img" style="background-image: url('${product.image}');"></div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                },
+            });
+        });
+    });
+</script>
+
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="nav-logo border">
+            <div class="logo"></div>
+        </div>
+        <div class="web-name">
+            <h3><i>FurniSure</i></h3>
+        </div>
+        <div class="nav-search">
+            <select class="search-select">
+                <option value="All">All</option>
+                <option value="Office">Office</option>
+                <option value="Home decor">Home Decor</option>
+                <option value="Kitchen dining">Kitchen Dining</option>
+                <option value="Bedroom">Bedroom</option>
+            </select>
+            <input id="search-box" placeholder="Search Furniture" class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="account">
+            <p class="nav-second"><a href="signin.html"><i class="fa-solid fa-user"></i> Sign in</a></p>
+        </div>
+        <div class="nav-cart">
+            <p class="nav-second"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></p>
+        </div>
+    </div>
+    
+    <div class="panel">
+        <div class="panel-ops">
+            <a href="index.html"><b>All</b></a>
+            <a href="office.html">Office</a>
+            <a href="#" id="home-decor">Home Decor</a>
+            <a href="#" id="kitchen-dining">Kitchen Dining</a>
+            <a href="#" id="bedroom">Bedroom</a> 
+        </div>
+    </div>
+</header>
+
+<div class="hero-section"></div>
+
+<div class="shop-section">
+    <div class="box1 box border">
+        <div class="box-content">
+            <h2>Festive Offers</h2>
+            <a href="#"><i>Check it out</i></a>
+            <div class="box_img" style="background-image: url('box2.jpg');"></div>
+        </div>
+    </div>
+    <div class="box2 box border">
+        <div class="box-content">
+            <a href="newLaunch.html"><h2>Newest Launches</h2></a>
+            <a href="newLaunch.html"><i>See what's new</i></a>
+            <div class="box_img" style="background-image: url('box1.jpg');"></div>
+        </div>
+    </div>
+    <div class="box3 box border">
+        <div class="box-content">
+            <h2>Aesthetic Decor</h2>
+            <a href="#"><i>See more</i></a>
+            <div class="box_img" style="background-image: url('box3.jpg');"></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="backtop">
+        <h4><a href="#" id="back-to-top"><i>Back to top</i></a></h4>
+    </div>
+    <div class="footinfo">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-pinterest"></i>
+        <h3>&#169; Feb 2025| FurniSure</h3>
+        <h3>WAD MiniProject &#9829;</h3>
+    </div>
+</footer>
+
+<script>
+$(document).ready(function() {
+   
+    $("#back-to-top").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    
+    $(".panel-ops a").click(function(event) {
+        event.preventDefault();
+        var category = $(this).text();
+        
+        $.ajax({
+            url: "/fetchCategoryData",  // Simulated endpoint
+            method: "GET",
+            data: { category: category },
+            success: function(response) {
+                $(".shop-section").html("<h2>Showing results for " + category + "</h2>");
+            },
+            error: function() {
+                $(".shop-section").html("<h2>Could not load " + category + "</h2>");
+            }
+        });
+    });
+
+   
+    $(".search-icon").click(function() {
+        var query = $("#search-box").val();
+        if (query.trim() !== "") {
+            alert("Searching for: " + query);
+        }
+    });
+});
+</script>
+</body>
+</html>
